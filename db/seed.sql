@@ -1,0 +1,23 @@
+\c portfolio_project
+
+INSERT INTO agents (name, role, abilities, isPlayableCharacter, image) VALUES
+('Fade', 'Initiator','['Seize', 'Haunt', 'Prowler', 'Nightfall']', true, 'https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/fullportrait.png')
+('Chamber', 'Sentinel', '[Rendezvous, Trademark, Headhunter, Tour De Force]', true, 'https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/fullportrait.png')
+('Astra', 'Controller', '[Nova Pulse, Nebula / Dissipate, Grenade, Astral Form / Cosmic Divide]', true, 'https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/fullportrait.png')
+('Neon', 'Duelist', '[High Gear, Relay Bolt, Fast Lane, Overdrive]', true, 'https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/fullportrait.png')
+('Sage')
+('Reyna')
+('Omen')
+('Brimstone')
+('Jett')
+('Cypher')
+('Sova')
+('Killjoy')
+('Raze')
+('Breach')
+('Viper')
+('Harbor')
+('Skye')
+('KAY/O')
+('Phoenix')
+('Yoru')
