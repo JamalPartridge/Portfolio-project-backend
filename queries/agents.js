@@ -18,7 +18,7 @@ const getAllAgents = async () => {
 };
 const createAgent = async (agent) => {
     try {
-    const newAgent = await db.one('INSERT INTO agents (name, role, abilities, image) VALUES($1, $2, $3, $4, $5) RETURNING *',[agent.name, agent.role, agent.abilities, agent.isPlayableCharacter, agent.image]
+    const newAgent = await db.one('INSERT INTO agents (name, role, image) VALUES($1, $2, $3, $4) RETURNING *',[agent.name, agent.role, agent.isPlayable, agent.image]
         );
         return newAgent;
     } catch (error) {
@@ -39,8 +39,12 @@ const deleteAgent = async (id) => {
   const updateAgent = async (id, agent) => {
     try {
       const updatedAgent = await db.one(
-        "UPDATE agents SET name=$1, role=$2, abilities=$3, isPlayableCharacter=4 image=$5 where id=$6 RETURNING *",
-        [agent.name, agent.role, agent.abilities, agent.isPlayableCharacter, agent.image, id]
+        "UPDATE agents SET name=$1, role=$2, isPlayable=$3 image=$4 where id=$5 RETURNING *",
+        [ 
+            agent.name, 
+            agent.role, 
+            agent.isPlayable, 
+            agent.image, id]
         );
         return updatedAgent;
     } catch (error) {
