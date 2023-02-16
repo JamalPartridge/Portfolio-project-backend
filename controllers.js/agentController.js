@@ -28,10 +28,8 @@ agents.get("/", async (req, res) => {
   
   //CREATE
   agents.post("/", checkName, checkBoolean, async (req, res) => {
-    const agent = req.body;
-    agent.isPlayble = confirmAgent(agent);
     try {
-      const createAgent = await createAgent(agent);
+      const agent = await createAgent(agent);
       res.status(200).json(createAgent);
     } catch (error) {
       res.status(500).json({ error: "Problem With The Server" });
@@ -42,8 +40,8 @@ agents.get("/", async (req, res) => {
   agents.delete("/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const deleteAgent = await deleteAgent(id);
-      res.status(200).json(deleteAgent);
+      const deletedAgent = await deleteAgent(id);
+      res.status(200).json(deletedAgent);
     } catch (error) {
       res.status(404).json({ error: "Page Not Found" });
     }
@@ -52,8 +50,8 @@ agents.get("/", async (req, res) => {
   //UPDATE
   agents.put('/:id', checkName, checkBoolean, async(req,res)=>{
       try {
-          const {id}=req.params
-          const updatedAgent = await updateAgents(id, req.body)
+          const { id } = req.params
+          const updatedAgent = await updateAgent(id, req.body)
           res.status(200).json(updatedAgent)
       } catch (error) {
           res.status(404).json({error:"Problem With The Server"})
@@ -61,5 +59,5 @@ agents.get("/", async (req, res) => {
     });
   
   
-  module.exports = Agents;
+  module.exports = agents;
   
