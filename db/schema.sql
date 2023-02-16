@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS portfolio_project;
-CREATE DATABASE portfolio_project;
+DROP DATABASE IF EXISTS portfolio_project_backend;
+CREATE DATABASE portfolio_project_backend;
 
-\c portfolio_project;
+\c portfolio_project_backend;
 
 CREATE TABLE agents (
    id SERIAL PRIMARY KEY,
